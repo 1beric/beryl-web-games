@@ -60,6 +60,16 @@ const useMastermind = (id) => {
     });
   };
 
+  const setNextGuess = (value) => {
+    setGuesses((prev) => {
+      const newGuesses = [...prev];
+      const newGuessRow = newGuesses[guessesSubmitted];
+      const index = newGuessRow.indexOf(0);
+      if (index !== -1) newGuessRow[index] = value;
+      return newGuesses;
+    });
+  };
+
   useEffect(() => {
     setGuessesSubmitted(0);
     setGuesses(initialGuesses());
@@ -75,6 +85,7 @@ const useMastermind = (id) => {
     canSubmit: canSubmit,
     submitGuess: submitGuess,
     correctSubmission: correctSubmission,
+    setNextGuess: setNextGuess,
   };
 };
 

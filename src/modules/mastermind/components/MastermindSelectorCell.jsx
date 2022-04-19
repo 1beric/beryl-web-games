@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import * as PropTypes from "prop-types";
 import { Button, Paper, Typography, useTheme } from "@mui/material";
 import { useDrag } from "react-dnd";
+import useDraggableClick from "../../../util/useDraggableClick";
 
-const MastermindCell = ({ value, size }) => {
+const MastermindCell = ({ value, size, setNextGuess }) => {
   const theme = useTheme();
 
   const [{ isDragging }, setDragRef] = useDrag({
@@ -15,6 +16,10 @@ const MastermindCell = ({ value, size }) => {
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
+  });
+
+  const clickProps = useDraggableClick({
+    onClick: (event) => setNextGuess(value),
   });
 
   return (
@@ -38,6 +43,7 @@ const MastermindCell = ({ value, size }) => {
           border: "2px solid " + theme.palette.background.paper,
         },
       }}
+      {...clickProps}
     >
       {/* {colorblindMode === "ON" && (
         <Typography variant="subtitle1">{value}</Typography>

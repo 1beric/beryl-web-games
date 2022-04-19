@@ -6,7 +6,7 @@ import MastermindSelectorCell from "./MastermindSelectorCell";
 
 const values = [1, 2, 3, 4, 5, 6];
 
-const MastermindColorSelector = ({ size }) => {
+const MastermindColorSelector = ({ size, setNextGuess }) => {
   const theme = useTheme();
 
   return (
@@ -20,7 +20,12 @@ const MastermindColorSelector = ({ size }) => {
       }}
     >
       {values.map((value, index) => (
-        <MastermindSelectorCell value={value} key={index} size={size} />
+        <MastermindSelectorCell
+          value={value}
+          key={index}
+          size={size}
+          setNextGuess={setNextGuess}
+        />
       ))}
     </Box>
   );

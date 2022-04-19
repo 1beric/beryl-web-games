@@ -23,6 +23,7 @@ const Mastermind = () => {
     guessesSubmitted,
     canSubmit,
     correctSubmission,
+    setNextGuess,
   } = useMastermind(mastermindId);
 
   const handleSubmit = submitGuess;
@@ -80,7 +81,7 @@ const Mastermind = () => {
           maxHeight: "-webkit-fill-available",
         }}
       >
-        <MastermindColorSelector size={8} />
+        <MastermindColorSelector size={8} setNextGuess={setNextGuess} />
         <Box
           sx={{
             display: "flex",
