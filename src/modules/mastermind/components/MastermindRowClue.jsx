@@ -1,9 +1,17 @@
 import React from "react";
 import * as PropTypes from "prop-types";
-import { Paper, useTheme } from "@mui/material";
-import MoreHoriz from "@mui/icons-material/MoreHoriz";
+import { Button, Paper, useTheme } from "@mui/material";
+import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 
-const MastermindRowClue = ({ values, solution, showClue, size }) => {
+const MastermindRowClue = ({
+  values,
+  solution,
+  showClue,
+  size,
+  showSubmit,
+  handleSubmit,
+  canSubmit,
+}) => {
   const theme = useTheme();
 
   const renderClue = (color, index) => (
@@ -62,7 +70,21 @@ const MastermindRowClue = ({ values, solution, showClue, size }) => {
       }}
     >
       {showClue && renderClues()}
-      {!showClue && <MoreHoriz />}
+      {showSubmit && (
+        <Button
+          variant="contained"
+          onClick={handleSubmit}
+          sx={{
+            minWidth: 0,
+            padding: theme.spacing(0.5),
+            width: "100%",
+            height: "100%",
+          }}
+          disabled={!canSubmit()}
+        >
+          <KeyboardReturnIcon />
+        </Button>
+      )}
     </Paper>
   );
 };

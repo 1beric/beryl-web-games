@@ -4,10 +4,11 @@ import { Box, Button, Paper, Typography, useTheme } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import { DndContext, DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import ROUTE_ELEMENTS from "../../body/util/routeElements";
 import useMastermind from "../util/useMastermind";
 import MastermindRow from "./MastermindRow";
 import MastermindColorSelector from "./MastermindColorSelector";
+import MastermindCompleted from "./MastermindCompleted";
+import MastermindNoGame from "./MastermindNoGame";
 
 const Mastermind = () => {
   const theme = useTheme();
@@ -21,6 +22,7 @@ const Mastermind = () => {
     submitGuess,
     guessesSubmitted,
     canSubmit,
+    correctSubmission,
   } = useMastermind(mastermindId);
 
   const handleSubmit = submitGuess;
@@ -47,9 +49,11 @@ const Mastermind = () => {
           values={row}
           handleCellChanged={handleCellChanged}
           size={8}
-          editable={guessesSubmitted === index}
+          editable={!correctSubmission && guessesSubmitted === index}
           showClue={index < guessesSubmitted}
           solution={solution}
+          handleSubmit={handleSubmit}
+          canSubmit={canSubmit}
           hasClue
         />
       ))}
@@ -57,31 +61,7 @@ const Mastermind = () => {
   );
 
   if (!mastermindId) {
-    return (
-      <Paper
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-
-          gap: theme.spacing(2),
-          padding: theme.spacing(2),
-          width: "60%",
-          minWidth: 256,
-          maxHeight: "-webkit-fill-available",
-        }}
-      >
-        <Typography variant="h5">Mastermind</Typography>
-        <Button
-          component={Link}
-          to={ROUTE_ELEMENTS.MASTERMIND.createPath()}
-          variant="contained"
-        >
-          New Game
-        </Button>
-      </Paper>
-    );
+    return <MastermindNoGame />;
   }
 
   return (
@@ -112,15 +92,14 @@ const Mastermind = () => {
           }}
         >
           <Typography variant="h5">Mastermind</Typography>
-          {guessesSubmitted === 8 && <MastermindRow values={solution} />}
           {renderGame()}
-          <Button
-            variant="contained"
-            onClick={handleSubmit}
-            disabled={!canSubmit()}
-          >
-            Submit
-          </Button>
+          <MastermindCompleted
+            id={mastermindId}
+            guesses={guesses}
+            solution={solution}
+            guessesSubmitted={guessesSubmitted}
+            correctSubmission={correctSubmission}
+          />
         </Box>
       </Paper>
     </DndProvider>

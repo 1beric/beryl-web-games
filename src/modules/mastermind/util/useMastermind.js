@@ -21,6 +21,9 @@ const initialGuesses = () => [
 const useMastermind = (id) => {
   const [guesses, setGuesses] = useState(initialGuesses());
   const [guessesSubmitted, setGuessesSubmitted] = useState(0);
+  const [correctSubmission, setCorrectSubmission] = useState(false);
+
+  const solution = id ? calculateMastermindSolution(id) : [0, 0, 0, 0];
 
   const canSubmit = () => {
     const currentGuesses = guesses[guessesSubmitted];
@@ -32,8 +35,21 @@ const useMastermind = (id) => {
     );
   };
 
+  const isCorrect = () => {
+    const values = guesses[guessesSubmitted];
+    for (let index = 0; index < solution.length; index++) {
+      if (solution[index] !== values[index]) {
+        return false;
+      }
+    }
+    return true;
+  };
+
   const submitGuess = () => {
-    if (canSubmit()) setGuessesSubmitted(guessesSubmitted + 1);
+    if (canSubmit()) {
+      setCorrectSubmission(isCorrect());
+      setGuessesSubmitted(guessesSubmitted + 1);
+    }
   };
 
   const setGuess = (index, value) => {
@@ -47,16 +63,18 @@ const useMastermind = (id) => {
   useEffect(() => {
     setGuessesSubmitted(0);
     setGuesses(initialGuesses());
+    setCorrectSubmission(false);
   }, [id]);
 
   return {
     id: id,
-    solution: id ? calculateMastermindSolution(id) : [0, 0, 0, 0],
+    solution: solution,
     guesses: guesses,
     guessesSubmitted: guessesSubmitted,
     setGuess: setGuess,
     canSubmit: canSubmit,
     submitGuess: submitGuess,
+    correctSubmission: correctSubmission,
   };
 };
 

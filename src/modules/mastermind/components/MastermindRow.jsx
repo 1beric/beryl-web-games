@@ -13,6 +13,8 @@ const MastermindRow = ({
   solution,
   showClue,
   hasClue,
+  handleSubmit,
+  canSubmit,
 }) => {
   const theme = useTheme();
 
@@ -60,6 +62,9 @@ const MastermindRow = ({
           solution={solution}
           showClue={showClue}
           size={size}
+          showSubmit={editable}
+          handleSubmit={handleSubmit}
+          canSubmit={canSubmit}
         />
       )}
     </Box>
