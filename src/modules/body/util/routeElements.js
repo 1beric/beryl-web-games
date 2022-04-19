@@ -16,7 +16,7 @@ const ROUTE_ELEMENTS = {
   MASTERMIND: {
     id: "MASTERMIND",
     title: "Mastermind",
-    path: "mastermind",
+    path: "/mastermind",
     createPath: () => "/mastermind/" + createId(),
     valuablePath: "/mastermind/:mastermindId",
     navable: true,

@@ -27,10 +27,11 @@ const AppBase = ({ routes }) => {
 
 const RouterWrappedApp = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <AppBase
         routes={Object.values(ROUTE_ELEMENTS).map((route) => (
           <Route
+            exact
             key={route.id}
             path={route.path}
             element={<Body elementId={route.id} />}
