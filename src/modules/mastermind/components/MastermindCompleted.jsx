@@ -35,7 +35,7 @@ const MastermindCompleted = ({
     // for (let index = 0; index < guessesSubmitted; index++) {
     //   lines.push(guesses[index].join(" "));
     // }
-    lines.push(process.env.PUBLIC_URL + "/mastermind/" + id);
+    lines.push(document.location.href);
 
     navigator.clipboard.writeText(lines.join("\n"));
   };
