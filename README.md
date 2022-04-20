@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Beryl Web Games
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### Main Features
 
-In the project directory, you can run:
+- Client-side routing
+- **Future features**
+  - Accounts for saving progress across devices
+  - Mobile support
+  - Colorblind accessibility
+  - Local history (statistics/previous games)
+  - Saved games
+  - Web sockets for concurrent games
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Mastermind
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Drag and drop
+- Id-generated solutions
+- Id parsed from url
+- Can share scores and games
+- **Future features**
+  - Custom colors
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Farm (name tbd)
 
-### `npm run build`
+- ...
+- **Future features**
+  - Seeds
+  - Plants
+  - Growth
+  - Over real time
+  - Watering
+  - Harvesting
+  - Mutation
+  - Cross-breeding
+  - Species
+    - Trees
+    - Bees
+    - Flowers
+    - Vegetables
+    - Berries
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Chess
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ...
+- **Future features**
+  - Drag and drop
+  - See potential moves
+  - See danger lines
+  - Play against computer
+  - Play against friend
+  - Unrated
+  - Rated
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Checkers
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ...
+- **Future features**
+  - Drag and drop
+  - See potential moves
+  - See danger lines
+  - Play against computer
+  - Play against friend
+  - Unrated
+  - Rated
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Mancala
 
-## Learn More
+- ...
+- **Future features**
+  - See potential moves
+  - Play against computer
+  - Play against friend
+  - Unrated
+  - Rated
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Facists
 
-### Code Splitting
+- ...
+- **Future features** - Networked between players - Parties - Play against computer - Unrated - Rated - Players can take notes
+<!-- ___
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+####
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- ...
+- **Future features** - ...
+  \_\_\_ -->
