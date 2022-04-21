@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/beryl-web-games/static/css/main.e6c13ad2.css",
-    "main.js": "/beryl-web-games/static/js/main.942d6df9.js",
+    "main.css": "/beryl-web-games/static/css/main.143a96a0.css",
+    "main.js": "/beryl-web-games/static/js/main.aec827f3.js",
     "index.html": "/beryl-web-games/index.html",
-    "main.e6c13ad2.css.map": "/beryl-web-games/static/css/main.e6c13ad2.css.map",
-    "main.942d6df9.js.map": "/beryl-web-games/static/js/main.942d6df9.js.map"
+    "main.143a96a0.css.map": "/beryl-web-games/static/css/main.143a96a0.css.map",
+    "main.aec827f3.js.map": "/beryl-web-games/static/js/main.aec827f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.942d6df9.js"
+    "static/css/main.143a96a0.css",
+    "static/js/main.aec827f3.js"
   ]
 }
