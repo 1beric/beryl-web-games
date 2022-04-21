@@ -38,7 +38,7 @@ const Header = () => {
   const renderTabs = () => {
     const currentTab = routeMatch?.pattern?.path || "/";
     return (
-      <Tabs value={currentTab}>
+      <Tabs value={currentTab} variant="scrollable">
         {Object.values(ROUTE_ELEMENTS)
           .filter((route) => route.navable || route.header)
           .map((route) => (

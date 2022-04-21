@@ -1,4 +1,5 @@
 import createId from "../../../util/createId";
+import FarmLife from "../../farmLife/components/FarmLife";
 import Home from "../../home/components/Home";
 import Mastermind from "../../mastermind/components/Mastermind";
 
@@ -25,6 +26,16 @@ const ROUTE_ELEMENTS = {
       path: ":mastermindId",
     },
     component: Mastermind,
+  },
+  FARM_LIFE: {
+    id: "FARM_LIFE",
+    title: "Farm Life",
+    path: "/farm-life",
+    createPath: () => "/farm-life",
+    valuablePath: "/farm-life",
+    navable: true,
+    header: true,
+    component: FarmLife,
   },
 };
 

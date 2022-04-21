@@ -28,22 +28,25 @@
 
 #### Farm (name tbd)
 
-- ...
+- Drag and drop
+- Fruits
+- Vegetables
+- Flowers
+- Trees
+- Planting
+- Harvesting
+- Watering
+- Growth over real time
+- Shops (purchase/sell)
 - **Future features**
-  - Seeds
-  - Plants
-  - Growth
-  - Over real time
-  - Watering
-  - Harvesting
+  - Growth Rate
+  - Water needs
+  - Survivability
+  - Longevity
+  - Quality
   - Mutation
   - Cross-breeding
-  - Species
-    - Trees
-    - Bees
-    - Flowers
-    - Vegetables
-    - Berries
+  - Bees!
 
 ---
 

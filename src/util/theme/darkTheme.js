@@ -12,7 +12,6 @@ const darkTheme = createTheme({
       light: "#B377CF",
       main: "#A359C5",
       dark: "#9040B5",
-      contrastText: "#000",
     },
 
     mastermind: {
@@ -42,6 +41,14 @@ const darkTheme = createTheme({
       },
       6: {
         main: "#6FD489",
+        contrastText: "#000",
+      },
+    },
+
+    farmLife: {
+      soil: {
+        dry: "#694b2b",
+        watered: "#4a331b",
         contrastText: "#000",
       },
     },

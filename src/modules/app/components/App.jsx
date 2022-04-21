@@ -1,10 +1,15 @@
 import { Paper, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { PersistGate } from "redux-persist/integration/react";
 import themes from "../../../util/theme";
 import Body from "../../body/components/Body";
+import ReduxLoading from "./ReduxLoading";
 import ROUTE_ELEMENTS from "../../body/util/routeElements";
 import Header from "../../header/components/Header";
 import InvalidPath from "../../invalidPath/components/InvalidPath";
+import { Provider } from "react-redux";
+import store, { persistor } from "../../../store";
+import ErrorHandler from "./ErrorHandler";
 
 const AppBase = ({ routes }) => {
   return (
@@ -49,10 +54,34 @@ const RouterWrappedApp = () => {
   );
 };
 
+const PersistorWrappedApp = () => {
+  return (
+    <PersistGate loading={<ReduxLoading />} persistor={persistor}>
+      <RouterWrappedApp />
+    </PersistGate>
+  );
+};
+
+const ReduxWrappedApp = () => {
+  return (
+    <Provider store={store}>
+      <PersistorWrappedApp />
+    </Provider>
+  );
+};
+
+const ErrorHandlerWrappedApp = () => {
+  return (
+    <ErrorHandler>
+      <ReduxWrappedApp />
+    </ErrorHandler>
+  );
+};
+
 const ThemeWrappedApp = () => {
   return (
     <ThemeProvider theme={themes.darkTheme}>
-      <RouterWrappedApp />
+      <ErrorHandlerWrappedApp />
     </ThemeProvider>
   );
 };

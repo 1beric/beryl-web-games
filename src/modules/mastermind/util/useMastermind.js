@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
 
+const sum = (result, current) => result + current;
+
+const stringToInt = (val) => {
+  return val
+    .split("")
+    .map((char) => char.charCodeAt(0))
+    .reduce(sum, 0);
+};
+
 const calculateMastermindSolution = (id) => {
   const solution = [];
-  solution.push((id.substring(0, 4) % 6) + 1);
-  solution.push((id.substring(4, 8) % 6) + 1);
-  solution.push((id.substring(8, 12) % 6) + 1);
-  solution.push((id.substring(12, 16) % 6) + 1);
+  solution.push((stringToInt(id.substring(0, 4)) % 6) + 1);
+  solution.push((stringToInt(id.substring(4, 8)) % 6) + 1);
+  solution.push((stringToInt(id.substring(8, 12)) % 6) + 1);
+  solution.push((stringToInt(id.substring(12, 16)) % 6) + 1);
   return solution;
 };
 const initialGuesses = () => [
